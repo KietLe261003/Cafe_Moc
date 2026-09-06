@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cà Phê Mộc — Giới thiệu</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .page-banner {
+    background: var(--xanh-la);
+    color: var(--nen-trang);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .page-banner p { color: var(--vang-nhat); margin-top: 8px; }
+
+  /* Layout 2 cột: text bên trái, ảnh bên phải, dùng Flexbox */
+  .about-row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 72px;
+  }
+  .about-row.reverse { flex-direction: row-reverse; }
+  .about-row > div { flex: 1 1 0; }
+  .about-row img { border-radius: 8px; }
+
+  .about-row h2 { font-size: 1.9rem; margin-bottom: 16px; }
+  .about-row p { color: var(--chu-nhat); margin-bottom: 12px; }
+
+  blockquote {
+    font-family: var(--font-tieu-de);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--xanh-la);
+    border-left: 4px solid var(--vang-dat);
+    padding-left: 24px;
+    margin: 48px 0;
+  }
+  blockquote cite {
+    display: block;
+    font-family: var(--font-noi-dung);
+    font-style: normal;
+    font-size: .9rem;
+    color: var(--chu-nhat);
+    margin-top: 8px;
+  }
+
+  /* Đội ngũ - dùng grid để chia đều thẻ */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .team-card {
+    background: var(--nen-trang);
+    border: 1px solid var(--vien);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .team-card img { aspect-ratio: 1/1; object-fit: cover; }
+  .team-card .info { padding: 16px; }
+  .team-card .role { color: var(--vang-dat); font-size: .85rem; font-weight: 600; }
+
+  @media (max-width: 700px) {
+    .about-row, .about-row.reverse { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">Cà Phê Mộc</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="about.html" aria-current="page">Giới thiệu</a></li>
+      <li><a href="menu.html">Thực đơn</a></li>
+      <li><a href="gallery.html">Không gian</a></li>
+      <li><a href="contact.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-banner">
+    <h1>Câu chuyện của chúng tôi</h1>
+    <p>Từ một góc bếp nhỏ đến quán cà phê bạn đang ghé thăm</p>
+  </div>
+
+  <section class="container">
+    <div class="about-row">
+      <div>
+        <span class="eyebrow">Khởi đầu</span>
+        <h2>Từ đam mê rang xay thủ công</h2>
+        <p>Cà Phê Mộc bắt đầu từ năm 2018, khi người sáng lập mang tình yêu cà phê Việt Nam đi khắp các vùng nguyên liệu để tìm ra hạt cà phê ngon nhất.</p>
+        <p>Chúng tôi tin rằng một ly cà phê ngon không chỉ đến từ hạt cà phê chất lượng, mà còn từ sự tỉ mỉ trong từng công đoạn pha chế.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=700" alt="Người pha chế cà phê thủ công">
+      </div>
+    </div>
+
+    <div class="about-row reverse">
+      <div>
+        <span class="eyebrow">Không gian</span>
+        <h2>Nơi chậm lại giữa nhịp sống vội</h2>
+        <p>Toàn bộ nội thất được làm từ gỗ tái chế, kết hợp cùng ánh sáng tự nhiên và mảng xanh, tạo nên không gian ấm áp, gần gũi.</p>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=700" alt="Không gian quán cà phê gỗ mộc">
+      </div>
+    </div>
+
+    <blockquote>
+      "Cà phê không chỉ để uống, mà để tận hưởng từng khoảnh khắc chậm rãi trong ngày."
+      <cite>— Chủ quán Cà Phê Mộc</cite>
+    </blockquote>
+
+    <span class="eyebrow">Đội ngũ</span>
+    <h2 class="section-title">Những người đứng sau quầy pha chế</h2>
+    <p class="section-subtitle">Đội ngũ barista giàu kinh nghiệm, luôn sẵn sàng chia sẻ về cà phê.</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=300" alt="Barista Minh Anh">
+        <div class="info">
+          <h3>Minh Anh</h3>
+          <p class="role">Trưởng quầy pha chế</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300" alt="Barista Quốc Bảo">
+        <div class="info">
+          <h3>Quốc Bảo</h3>
+          <p class="role">Chuyên viên rang xay</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300" alt="Barista Thu Hà">
+        <div class="info">
+          <h3>Thu Hà</h3>
+          <p class="role">Barista</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Cà Phê Mộc</span>
+    <span class="muted">123 Đường Gỗ Mộc, Quận 1, TP.HCM</span>
+  </div>
+</footer>
+
+</body>
+</html>

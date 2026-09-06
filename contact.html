@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cà Phê Mộc — Liên hệ</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .page-banner {
+    background: var(--xanh-la);
+    color: var(--nen-trang);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .page-banner p { color: var(--vang-nhat); margin-top: 8px; }
+
+  /* Bố cục 2 cột: thông tin liên hệ | form, dùng CSS Grid */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+
+  .contact-info h2 { font-size: 1.6rem; margin-bottom: 16px; }
+  .contact-info p { color: var(--chu-nhat); margin-bottom: 24px; }
+
+  .info-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .info-item .icon {
+    width: 40px; height: 40px;
+    background: var(--nen-trang);
+    border: 1px solid var(--vien);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .info-item h4 { font-size: .95rem; margin-bottom: 2px; }
+  .info-item span { color: var(--chu-nhat); font-size: .9rem; }
+
+  .map-box {
+    margin-top: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--vien);
+  }
+  .map-box iframe { width: 100%; height: 200px; border: 0; display: block; }
+
+  /* Form */
+  .contact-form {
+    background: var(--nen-trang);
+    border: 1px solid var(--vien);
+    border-radius: 10px;
+    padding: 32px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .field { margin-bottom: 20px; display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: .88rem; font-weight: 600; }
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 11px 14px;
+    border: 1px solid var(--vien);
+    border-radius: 6px;
+    font: inherit;
+    background: var(--nen-kem);
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--vang-dat);
+    box-shadow: 0 0 0 3px rgba(201,138,60,.2);
+  }
+  .field textarea { resize: vertical; min-height: 110px; }
+
+  .field input:required:invalid { border-color: #d98a8a; }
+
+  .contact-form .btn-primary {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 800px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">Cà Phê Mộc</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="about.html">Giới thiệu</a></li>
+      <li><a href="menu.html">Thực đơn</a></li>
+      <li><a href="gallery.html">Không gian</a></li>
+      <li><a href="contact.html" aria-current="page">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-banner">
+    <h1>Liên hệ với chúng tôi</h1>
+    <p>Chúng tôi luôn sẵn sàng lắng nghe bạn</p>
+  </div>
+
+  <section class="container">
+    <div class="contact-layout">
+
+      <div class="contact-info">
+        <h2>Thông tin liên hệ</h2>
+        <p>Ghé quán, gọi điện hoặc gửi tin nhắn cho chúng tôi — bằng cách nào cũng được!</p>
+
+        <div class="info-item">
+          <div class="icon">📍</div>
+          <div><h4>Địa chỉ</h4><span>123 Đường Gỗ Mộc, Quận 1, TP.HCM</span></div>
+        </div>
+        <div class="info-item">
+          <div class="icon">📞</div>
+          <div><h4>Điện thoại</h4><span>028 1234 5678</span></div>
+        </div>
+        <div class="info-item">
+          <div class="icon">✉️</div>
+          <div><h4>Email</h4><span>hello@caphemoc.vn</span></div>
+        </div>
+        <div class="info-item">
+          <div class="icon">🕐</div>
+          <div><h4>Giờ mở cửa</h4><span>7:00 – 22:00 mỗi ngày</span></div>
+        </div>
+
+        <div class="map-box">
+          <iframe src="https://www.google.com/maps?q=Ho+Chi+Minh+City&output=embed" loading="lazy" title="Bản đồ vị trí quán"></iframe>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <h2 style="margin-bottom:20px;">Gửi tin nhắn cho chúng tôi</h2>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="hoten">Họ và tên</label>
+            <input type="text" id="hoten" name="hoten" placeholder="Nguyễn Văn A" required>
+          </div>
+          <div class="field">
+            <label for="sdt">Số điện thoại</label>
+            <input type="tel" id="sdt" name="sdt" placeholder="09xx xxx xxx">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="ban@email.com" required>
+        </div>
+
+        <div class="field">
+          <label for="chude">Chủ đề</label>
+          <select id="chude" name="chude">
+            <option>Góp ý dịch vụ</option>
+            <option>Đặt bàn</option>
+            <option>Hợp tác nhượng quyền</option>
+            <option>Khác</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="loinhan">Lời nhắn</label>
+          <textarea id="loinhan" name="loinhan" placeholder="Nội dung bạn muốn gửi..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
+      </form>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Cà Phê Mộc</span>
+    <span class="muted">123 Đường Gỗ Mộc, Quận 1, TP.HCM</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* =========================================================
+   CÀ PHÊ MỘC — stylesheet dùng chung cho cả 5 trang bài tập
+   ========================================================= */
+
+:root {
+  --xanh-la:      #2f3e2f;   /* xanh rêu đậm - màu chính */
+  --xanh-la-nhat: #4a5d46;
+  --vang-dat:     #c98a3c;   /* vàng đất - màu nhấn */
+  --vang-nhat:    #e8c98a;
+  --nen-kem:      #f6f1e7;   /* nền kem */
+  --nen-trang:    #fffdf8;
+  --chu-toi:      #2a2620;
+  --chu-nhat:     #6f6a5f;
+  --vien:         #e2d8c3;
+
+  --font-tieu-de: 'Playfair Display', Georgia, serif;
+  --font-noi-dung: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-noi-dung);
+  background: var(--nen-kem);
+  color: var(--chu-toi);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+h1, h2, h3 { font-family: var(--font-tieu-de); font-weight: 700; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / Nav dùng chung ---------- */
+header.site-header {
+  background: var(--xanh-la);
+  color: var(--nen-trang);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-tieu-de);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--vang-nhat);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .25s ease, color .25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  border-color: var(--vang-dat);
+  color: var(--vang-nhat);
+}
+
+/* ---------- Footer dùng chung ---------- */
+footer.site-footer {
+  background: var(--chu-toi);
+  color: var(--nen-kem);
+  padding: 32px 24px;
+  margin-top: 64px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: .9rem;
+}
+
+.footer-inner .muted { color: #a89f8d; }
+
+/* ---------- Nút bấm dùng chung ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-primary {
+  background: var(--vang-dat);
+  color: var(--chu-toi);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(201,138,60,.35);
+}
+
+.btn-outline {
+  border: 1px solid var(--nen-trang);
+  color: var(--nen-trang);
+}
+
+/* ---------- Tiêu đề chung của mỗi section ---------- */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: var(--chu-nhat);
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  color: var(--vang-dat);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+section { padding: 64px 0; }

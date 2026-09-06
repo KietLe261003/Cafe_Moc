@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cà Phê Mộc — Thực đơn</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .page-banner {
+    background: var(--xanh-la);
+    color: var(--nen-trang);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .page-banner p { color: var(--vang-nhat); margin-top: 8px; }
+
+  /* Tabs lọc danh mục - chỉ giao diện, không cần JS phức tạp */
+  .filter-tabs {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .filter-tabs a {
+    padding: 8px 20px;
+    border: 1px solid var(--vien);
+    border-radius: 999px;
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--chu-nhat);
+  }
+  .filter-tabs a.active {
+    background: var(--vang-dat);
+    border-color: var(--vang-dat);
+    color: var(--chu-toi);
+  }
+
+  /* CSS Grid: lưới sản phẩm tự co giãn theo màn hình */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    margin-bottom: 64px;
+  }
+
+  .menu-card {
+    background: var(--nen-trang);
+    border: 1px solid var(--vien);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(47,62,47,.15);
+  }
+  .menu-card .thumb {
+    height: 170px;
+    overflow: hidden;
+  }
+  .menu-card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+  }
+  .menu-card:hover .thumb img { transform: scale(1.08); }
+
+  .menu-card .body { padding: 18px 20px; }
+  .menu-card .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .menu-card .row h3 { font-size: 1.1rem; }
+  .menu-card .price {
+    color: var(--vang-dat);
+    font-weight: 700;
+    font-family: var(--font-tieu-de);
+  }
+  .menu-card p { color: var(--chu-nhat); font-size: .9rem; }
+  .menu-card .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: .75rem;
+    background: var(--nen-kem);
+    color: var(--xanh-la-nhat);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">Cà Phê Mộc</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="about.html">Giới thiệu</a></li>
+      <li><a href="menu.html" aria-current="page">Thực đơn</a></li>
+      <li><a href="gallery.html">Không gian</a></li>
+      <li><a href="contact.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-banner">
+    <h1>Thực đơn</h1>
+    <p>Chọn thức uống yêu thích của bạn</p>
+  </div>
+
+  <section class="container">
+    <div class="filter-tabs">
+      <a href="#" class="active">Tất cả</a>
+      <a href="#">Cà phê</a>
+      <a href="#">Trà</a>
+      <a href="#">Bánh ngọt</a>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Cà phê đen đá"></div>
+        <div class="body">
+          <div class="row"><h3>Cà phê đen đá</h3><span class="price">29.000đ</span></div>
+          <p>Cà phê robusta rang mộc, đậm vị truyền thống.</p>
+          <span class="tag">Cà phê</span>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Bạc xỉu"></div>
+        <div class="body">
+          <div class="row"><h3>Bạc xỉu</h3><span class="price">35.000đ</span></div>
+          <p>Vị béo của sữa hoà quyện cùng cà phê nguyên chất.</p>
+          <span class="tag">Cà phê</span>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400" alt="Trà đào cam sả"></div>
+        <div class="body">
+          <div class="row"><h3>Trà đào cam sả</h3><span class="price">39.000đ</span></div>
+          <p>Thanh mát, vị chua ngọt hài hoà từ đào và cam.</p>
+          <span class="tag">Trà</span>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400" alt="Bánh croissant"></div>
+        <div class="body">
+          <div class="row"><h3>Croissant bơ</h3><span class="price">32.000đ</span></div>
+          <p>Bánh sừng bò giòn tan, thơm mùi bơ Pháp.</p>
+          <span class="tag">Bánh ngọt</span>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400" alt="Matcha đá xay"></div>
+        <div class="body">
+          <div class="row"><h3>Matcha đá xay</h3><span class="price">42.000đ</span></div>
+          <p>Bột matcha Nhật Bản xay cùng đá và sữa tươi.</p>
+          <span class="tag">Trà</span>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <div class="thumb"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400" alt="Bánh tiramisu"></div>
+        <div class="body">
+          <div class="row"><h3>Tiramisu</h3><span class="price">45.000đ</span></div>
+          <p>Lớp kem mascarpone mềm mịn, thấm vị cà phê.</p>
+          <span class="tag">Bánh ngọt</span>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Cà Phê Mộc</span>
+    <span class="muted">123 Đường Gỗ Mộc, Quận 1, TP.HCM</span>
+  </div>
+</footer>
+
+</body>
+</html>

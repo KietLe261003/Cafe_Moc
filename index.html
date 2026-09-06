@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cà Phê Mộc — Trang chủ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  /* CSS riêng cho trang chủ */
+  .hero {
+    background: linear-gradient(rgba(20,25,18,.55), rgba(20,25,18,.55)),
+                url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1400') center/cover;
+    color: var(--nen-trang);
+    padding: 140px 24px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    max-width: 700px;
+    margin: 0 auto 16px;
+  }
+  .hero p { max-width: 520px; margin: 0 auto 32px; color: var(--vang-nhat); }
+  .hero .btn-group { display: flex; gap: 16px; justify-content: center; }
+
+  /* Box model: 3 thẻ giới thiệu ngắn, dùng flexbox để chia 3 cột */
+  .highlights {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .highlight-card {
+    flex: 1 1 260px;
+    background: var(--nen-trang);
+    border: 1px solid var(--vien);
+    border-radius: 8px;
+    padding: 28px;
+    text-align: center;
+  }
+  .highlight-card .icon { font-size: 2rem; margin-bottom: 12px; }
+
+  .cta {
+    background: var(--xanh-la);
+    color: var(--nen-trang);
+    text-align: center;
+  }
+  .cta h2 { color: var(--nen-trang); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="logo">Cà Phê Mộc</a>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Trang chủ</a></li>
+      <li><a href="about.html">Giới thiệu</a></li>
+      <li><a href="menu.html">Thực đơn</a></li>
+      <li><a href="gallery.html">Không gian</a></li>
+      <li><a href="contact.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Một góc yên tĩnh giữa lòng phố thị</h1>
+    <p>Cà phê rang mộc, pha thủ công, phục vụ trong không gian gỗ mộc mạc — nơi bạn có thể chậm lại một chút.</p>
+    <div class="btn-group">
+      <a href="menu.html" class="btn btn-primary">Xem thực đơn</a>
+      <a href="contact.html" class="btn btn-outline">Chỉ đường</a>
+    </div>
+  </section>
+
+  <section class="container">
+    <span class="eyebrow">Vì sao chọn chúng tôi</span>
+    <h2 class="section-title">Ba điều làm nên Cà Phê Mộc</h2>
+    <p class="section-subtitle">Mỗi ly cà phê là một câu chuyện nhỏ.</p>
+
+    <div class="highlights">
+      <div class="highlight-card">
+        <div class="icon">☕</div>
+        <h3>Rang xay mỗi ngày</h3>
+        <p>Hạt cà phê được rang mới mỗi sáng, đảm bảo hương thơm trọn vẹn nhất.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">🌿</div>
+        <h3>Không gian xanh</h3>
+        <p>Bàn ghế gỗ, cây xanh và ánh sáng tự nhiên tạo cảm giác thư thái.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="icon">🎵</div>
+        <h3>Nhạc acoustic nhẹ nhàng</h3>
+        <p>Không gian yên tĩnh, phù hợp để đọc sách, làm việc hoặc trò chuyện.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2 class="section-title">Ghé thăm chúng tôi hôm nay</h2>
+      <p class="section-subtitle" style="color:var(--vang-nhat)">Mở cửa từ 7:00 - 22:00 mỗi ngày</p>
+      <a href="contact.html" class="btn btn-primary">Xem địa chỉ</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Cà Phê Mộc</span>
+    <span class="muted">123 Đường Gỗ Mộc, Quận 1, TP.HCM</span>
+  </div>
+</footer>
+
+</body>
+</html>
